@@ -1,0 +1,50 @@
+{
+  "name": "timezest",
+  "displayName": "TimeZest Scheduling",
+  "description": "MCP server for TimeZest scheduling platform - create and manage technician scheduling requests",
+  "version": "0.1.0",
+  "author": "WYRE Technology",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/wyre-technology/timezest-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wyre-technology/timezest-mcp.git"
+  },
+  "keywords": [
+    "timezest",
+    "scheduling",
+    "appointments",
+    "technicians",
+    "psa",
+    "connectwise",
+    "autotask",
+    "halo"
+  ],
+  "capabilities": {
+    "tools": {
+      "description": "TimeZest scheduling tools with decision-tree navigation"
+    }
+  },
+  "configuration": {
+    "environment": {
+      "TIMEZEST_API_TOKEN": {
+        "description": "TimeZest API token",
+        "required": true,
+        "secret": true
+      }
+    }
+  },
+  "transports": [
+    {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@wyre-technology/timezest-mcp"]
+    },
+    {
+      "type": "http",
+      "host": "localhost",
+      "port": 8080,
+      "path": "/mcp"
+    }
+  ]
+}

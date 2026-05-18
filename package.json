@@ -1,0 +1,57 @@
+{
+  "name": "@wyre-technology/timezest-mcp",
+  "version": "0.0.0-semantically-released",
+  "type": "module",
+  "description": "MCP server for TimeZest scheduling platform",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "timezest-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "manifest.json"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@wyre-technology/node-timezest": "file:../node-timezest"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0",
+    "@types/node": "^20.0.0",
+    "semantic-release": "^23.0.0",
+    "@semantic-release/npm": "^11.0.0",
+    "@semantic-release/github": "^10.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "timezest",
+    "mcp",
+    "scheduling",
+    "mcp-server",
+    "psa",
+    "technician",
+    "appointments"
+  ],
+  "author": "WYRE Technology",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wyre-technology/timezest-mcp.git"
+  }
+}
