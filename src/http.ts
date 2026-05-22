@@ -17,7 +17,6 @@ export function startHttpServer(port: number): http.Server {
     // CRITICAL: Create fresh server and transport per request for gateway mode
     const mcpServer = createMcpServer();
     const transport = new StreamableHTTPServerTransport({
-      sessionIdGenerator: undefined, // STATELESS
       enableJsonResponse: true,
     });
 
