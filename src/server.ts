@@ -37,7 +37,7 @@ export function createMcpServer(): Server {
     }
   }
 
-  server.setRequestHandler(CallToolRequestSchema, async (request, _extra) => {
+  server.setRequestHandler(CallToolRequestSchema, async (request, _extra): Promise<any> => {
     const { name, arguments: args } = request.params;
 
     logger.debug('Tool call', { name, currentDomain });
