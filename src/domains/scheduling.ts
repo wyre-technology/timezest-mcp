@@ -205,7 +205,7 @@ async function handleCall(
 
           const selection = await elicitSelection(
             'Please select an appointment type:',
-            types.map(t => ({
+            types.map((t: { id: string; name: string; duration: number; description?: string }) => ({
               value: t.id,
               label: t.name,
               description: `${t.duration} min - ${t.description || 'No description'}`,
