@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
-    "@wyre-technology/node-timezest": "file:../node-timezest"
+    "@wyre-technology/node-timezest": "^1.0.0"
   },
   "devDependencies": {
     "tsup": "^8.0.0",
