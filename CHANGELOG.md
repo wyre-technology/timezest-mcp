@@ -1,3 +1,22 @@
+# 1.0.0 (2026-05-22)
+
+
+### Bug Fixes
+
+* add --passWithNoTests to vitest to allow builds with no test files ([ccbe423](https://github.com/wyre-technology/timezest-mcp/commit/ccbe4236c0a33ec338afe2e79f64af9591f59abc))
+* add explicit type annotation to map callback parameter ([385c7a0](https://github.com/wyre-technology/timezest-mcp/commit/385c7a091d885e7e597a8a794cfb27be88d3e909))
+* annotate CallToolRequestSchema handler return type as Promise<any> for SDK 1.29.0 compat ([9e08bb4](https://github.com/wyre-technology/timezest-mcp/commit/9e08bb401afa9113dc01b5cebb8fcccb5a299e54))
+* remove exactOptionalPropertyTypes for MCP SDK compatibility ([8849a1d](https://github.com/wyre-technology/timezest-mcp/commit/8849a1da25ab4802747ae666d35a2aa3f368cbd2))
+* remove explicit undefined for optional sessionIdGenerator property ([f583bbc](https://github.com/wyre-technology/timezest-mcp/commit/f583bbc0c3f4b419aa375a92c28ee8ffdefe7e3e))
+* replace local file: dependency with published npm version for CI ([3af3178](https://github.com/wyre-technology/timezest-mcp/commit/3af3178dcb827eb98700dffdbc2450db03e57229))
+* use ListToolsRequestSchema and add extra param for TS compatibility ([ff1aa10](https://github.com/wyre-technology/timezest-mcp/commit/ff1aa105c65b85c19fda57f08cd570dc4064505d))
+
+
+### Features
+
+* add server.json for MCP Registry publication ([#2](https://github.com/wyre-technology/timezest-mcp/issues/2)) ([0c3ac2d](https://github.com/wyre-technology/timezest-mcp/commit/0c3ac2dc674b2ef96c13d1f238926bd5fbfd0107))
+* initial TimeZest MCP server ([1d3f7d9](https://github.com/wyre-technology/timezest-mcp/commit/1d3f7d9021e0ed393dd6bc4a971c3aee0e700a29))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
