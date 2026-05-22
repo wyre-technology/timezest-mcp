@@ -2,7 +2,7 @@
  * MCP server setup, tool routing, and capabilities
  */
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import { CallToolRequestSchema } from '@modelcontextprotocol/sdk/types.js';
+import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { navigationHandler, getDomainHandler } from './domains/index.js';
 import { setServerRef } from './utils/server-ref.js';
 import { resetClient } from './utils/client.js';
@@ -37,7 +37,7 @@ export function createMcpServer(): Server {
     }
   }
 
-  server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  server.setRequestHandler(CallToolRequestSchema, async (request, _extra) => {
     const { name, arguments: args } = request.params;
 
     logger.debug('Tool call', { name, currentDomain });
@@ -97,7 +97,7 @@ export function createMcpServer(): Server {
     }
   });
 
-  server.setRequestHandler({ method: 'tools/list' }, async () => {
+  server.setRequestHandler(ListToolsRequestSchema, async () => {
     logger.debug('Tools list requested', { currentDomain });
 
     let tools = navigationHandler.getTools();
