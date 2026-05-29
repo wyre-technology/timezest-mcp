@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/wyre-technology/timezest-mcp/compare/v1.0.0...v1.1.0) (2026-05-29)
+
+
+### Features
+
+* **ci:** publish to MCP Registry on release ([#15](https://github.com/wyre-technology/timezest-mcp/issues/15)) ([cc569f7](https://github.com/wyre-technology/timezest-mcp/commit/cc569f76c0c3900cbc343d1f21facc4ed4942fbe))
+
 # 1.0.0 (2026-05-22)
 
 
