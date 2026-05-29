@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/wyre-technology/timezest-mcp/compare/v1.1.0...v1.1.1) (2026-05-29)
+
+
+### Bug Fixes
+
+* **ci:** bump version so registry gate fires and add required OCI label ([#16](https://github.com/wyre-technology/timezest-mcp/issues/16)) ([c352852](https://github.com/wyre-technology/timezest-mcp/commit/c352852894cc3404fc56dbf5f02bee5de1d43fd2))
+
 # [1.1.0](https://github.com/wyre-technology/timezest-mcp/compare/v1.0.0...v1.1.0) (2026-05-29)
 
 
