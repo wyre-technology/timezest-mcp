@@ -19,7 +19,11 @@
     "skipLibCheck": true,
     "declaration": true,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "types": [
+      "node"
+    ],
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "src/**/*"
