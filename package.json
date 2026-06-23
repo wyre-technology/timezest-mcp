@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
-    "@wyre-technology/node-timezest": "^1.0.0"
+    "@wyre-technology/node-timezest": "^1.0.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.0",
