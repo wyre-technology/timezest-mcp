@@ -1,3 +1,9 @@
+## Unreleased
+
+### Fixed
+
+- Add missing `GET /health` liveness route to the HTTP transport. The server previously returned 404 for any request other than `POST /mcp`, so the Azure Container Apps liveness probe (`GET /health`) failed and the platform recycled the container in a crash-loop. The route now returns `200 {"status":"ok"}` before the catch-all 404.
+
 ## [1.1.1](https://github.com/wyre-technology/timezest-mcp/compare/v1.1.0...v1.1.1) (2026-05-29)
 
 

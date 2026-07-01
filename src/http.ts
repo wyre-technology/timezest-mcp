@@ -8,6 +8,14 @@ import { logger } from './utils/logger.js';
 
 export function startHttpServer(port: number): http.Server {
   const server = http.createServer(async (req, res) => {
+    // Liveness probe: respond 200 to GET /health before the catch-all 404
+    // so Azure Container Apps does not recycle the container.
+    if (req.method === 'GET' && req.url === '/health') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'ok' }));
+      return;
+    }
+
     if (req.method !== 'POST' || req.url !== '/mcp') {
       res.writeHead(404, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: 'Not found' }));
