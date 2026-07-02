@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/wyre-technology/timezest-mcp/compare/v1.1.1...v1.1.2) (2026-07-02)
+
+
+### Bug Fixes
+
+* add /health liveness route (fixes ACA probe 404 crash-loop) ([#30](https://github.com/wyre-technology/timezest-mcp/issues/30)) ([6674500](https://github.com/wyre-technology/timezest-mcp/commit/6674500462d47f5699f23672db08b3b1892f627b))
+* vendor node-timezest SDK in-repo to drop private registry dependency ([#31](https://github.com/wyre-technology/timezest-mcp/issues/31)) ([6687593](https://github.com/wyre-technology/timezest-mcp/commit/6687593d011d40d0aa140cb2bb6a2533450cf5ee))
+
 ## Unreleased
 
 ### Changed
