@@ -1,7 +1,7 @@
 /**
  * Client singleton with credential management
  */
-import { TimeZestClient } from '@wyre-technology/node-timezest';
+import { TimeZestClient } from '../vendor/node-timezest/index.js';
 import { logger } from './logger.js';
 
 interface Credentials {
