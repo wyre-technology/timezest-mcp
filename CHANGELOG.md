@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Changed
+
+- Vendor the `node-timezest` client in-repo (`src/vendor/node-timezest/`) and drop the private GitHub Packages dependency `@wyre-technology/node-timezest`. Cross-repo GitHub Packages access via the release App token was failing with `403 Forbidden`, breaking `npm ci` in CI and blocking every release/deploy. The client source (with zero runtime dependencies) is now bundled at build time, so `npm ci` and the release pipeline no longer require private-registry access. The Dockerfile's GitHub Packages `.npmrc`/`NODE_AUTH_TOKEN` setup is removed as it is no longer needed.
+
 ### Fixed
 
 - Add missing `GET /health` liveness route to the HTTP transport. The server previously returned 404 for any request other than `POST /mcp`, so the Azure Container Apps liveness probe (`GET /health`) failed and the platform recycled the container in a crash-loop. The route now returns `200 {"status":"ok"}` before the catch-all 404.

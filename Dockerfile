@@ -2,15 +2,10 @@ FROM node:26-alpine AS builder
 
 WORKDIR /app
 
-# Add GitHub Packages authentication
-ARG NODE_AUTH_TOKEN
-RUN echo "@wyre-technology:registry=https://npm.pkg.github.com" > .npmrc && \
-    echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
-
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies (including from GitHub Packages)
+# Install dependencies (no private registry needed — SDK is vendored in-repo)
 RUN npm ci --ignore-scripts
 
 # Copy source code
