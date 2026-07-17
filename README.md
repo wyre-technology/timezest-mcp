@@ -15,6 +15,7 @@ MCP (Model Context Protocol) server for [TimeZest](https://timezest.com) schedul
 - 🛡️ **Gateway-ready** - stateless per-request design
 - 🔍 **TQL filtering** - TimeZest Query Language support
 - ✨ **Elicitation support** - interactive user prompts
+- 📇 **Interactive scheduling-request card (MCP Apps)** - `timezest_scheduling_get` renders as a card in MCP Apps hosts; neutral by default, brandable via `window.__BRAND__` injection or `MCP_BRAND_*` env vars
 
 ## Quick Start
 
