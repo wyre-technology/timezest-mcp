@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/wyre-technology/timezest-mcp/compare/v1.1.2...v1.2.0) (2026-07-17)
+
+
+### Features
+
+* interactive scheduling-request card via MCP Apps (SEP-1865) ([#36](https://github.com/wyre-technology/timezest-mcp/issues/36)) ([1db9a9a](https://github.com/wyre-technology/timezest-mcp/commit/1db9a9a54712d503268167c329c2c69a094407a8))
+
 ## [1.1.2](https://github.com/wyre-technology/timezest-mcp/compare/v1.1.1...v1.1.2) (2026-07-02)
 
 
