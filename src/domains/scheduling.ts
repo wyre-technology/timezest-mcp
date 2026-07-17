@@ -6,6 +6,7 @@ import type { DomainHandler, CallToolResult } from '../utils/types.js';
 import { getClient } from '../utils/client.js';
 import { logger } from '../utils/logger.js';
 import { elicitSelection, elicitConfirmation } from '../utils/elicitation.js';
+import { buildSchedulingRequestCard, SCHEDULING_REQUEST_CARD_META } from '../card.builder.js';
 
 function getTools(): Tool[] {
   return [
@@ -36,6 +37,7 @@ function getTools(): Tool[] {
     {
       name: 'timezest_scheduling_get',
       description: 'Get details for a specific scheduling request by ID',
+      _meta: SCHEDULING_REQUEST_CARD_META,
       inputSchema: {
         type: 'object',
         properties: {
@@ -180,10 +182,21 @@ async function handleCall(
 
         logger.info('Retrieved scheduling request', { requestId });
 
+        // MCP Apps: attach the normalized card payload the ui://
+        // scheduling-request card renders from. Best-effort — a null card
+        // just means no UI surface; the JSON payload is otherwise unchanged.
+        const payload: Record<string, unknown> = { ...request };
+        try {
+          const card = await buildSchedulingRequestCard(payload, client);
+          if (card) payload._card = card;
+        } catch {
+          // Card building never fails the tool result.
+        }
+
         return {
           content: [{
             type: 'text',
-            text: JSON.stringify(request, null, 2),
+            text: JSON.stringify(payload, null, 2),
           }],
         };
       }

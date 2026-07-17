@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "build:ui": "vite build && node scripts/embed-ui.mjs",
     "dev": "tsx src/index.ts",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
@@ -24,6 +25,7 @@
     "@modelcontextprotocol/sdk": "^1.0.0"
   },
   "devDependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.3",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/github": "^12.0.9",
@@ -32,7 +34,9 @@
     "semantic-release": "^25.0.6",
     "tsup": "^8.0.0",
     "tsx": "^4.23.0",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.3",
+    "vite": "^6.4.3",
+    "vite-plugin-singlefile": "^2.3.3",
     "vitest": "^4.1.10"
   },
   "engines": {

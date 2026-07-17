@@ -8,7 +8,16 @@
 
 ## Unreleased
 
+### Added
+
+- **Interactive scheduling-request card via MCP Apps (SEP-1865).** `timezest_scheduling_get` results now render as an interactive card in MCP Apps hosts (Claude Desktop/web, and other hosts advertising the `io.modelcontextprotocol/ui` extension), instead of a wall of JSON. The card shows the appointment type, status, trigger mode, customer, resolved agent/team, scheduling window, PSA ticket associations, and booking link as human-readable labels. The card is read-only — TimeZest write actions (create/cancel) stay in the conversation. Non-App hosts are unaffected: the tool's JSON payload is unchanged apart from a new `_card` field.
+  - The renderable tool advertises the UI via `_meta` (`ui/resourceUri`, plus the nested `ui.resourceUri` form) pointing at a new `ui://timezest/scheduling-request-card.html` resource served as `text/html;profile=mcp-app`. The card HTML is a self-contained vite single-file bundle embedded at build time (`src/generated/scheduling-request-card-html.ts`, committed), so it serves identically from stdio and Node HTTP transports without filesystem access. The server now declares the `resources` capability and answers `resources/list` / `resources/read` (`src/resources.ts`).
+  - The card is neutral by default (system fonts, no vendor identity, no external fetches) and brandable via `window.__BRAND__` injection or `MCP_BRAND_*` env vars (`MCP_BRAND_NAME`, `MCP_BRAND_LOGO_URL`, `MCP_BRAND_PRIMARY_COLOR`, `MCP_BRAND_ACCENT_COLOR`, `MCP_BRAND_BG`, `MCP_BRAND_TEXT`): at serve time the server replaces the card's BRAND_INJECT marker with an inline, `<`-escaped `window.__BRAND__` script, so self-hosters can theme the card without rebuilding. No brand configured = HTML served unchanged.
+  - The card payload builder is best-effort: appointment-type and agent/team lookups fall back to `#id` labels, and any card-building failure leaves the tool result untouched. New contract tests in `src/__tests__/mcp-apps.test.ts` pin the `_meta` advertisement, the `ui://` resource wire shape, the neutral-default/brand-injection behavior, and the card normalization.
+
 ### Changed
+
+- Pin `typescript` to `^6.0.3`: the dependabot bump to 7.0.2 crashes tsup's dts build step (tsup's bundled rollup-plugin-dts is built against the TS 6.x compiler API).
 
 - Vendor the `node-timezest` client in-repo (`src/vendor/node-timezest/`) and drop the private GitHub Packages dependency `@wyre-technology/node-timezest`. Cross-repo GitHub Packages access via the release App token was failing with `403 Forbidden`, breaking `npm ci` in CI and blocking every release/deploy. The client source (with zero runtime dependencies) is now bundled at build time, so `npm ci` and the release pipeline no longer require private-registry access. The Dockerfile's GitHub Packages `.npmrc`/`NODE_AUTH_TOKEN` setup is removed as it is no longer needed.
 
