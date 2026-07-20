@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.1...v1.2.2) (2026-07-20)
+
+
+### Bug Fixes
+
+* **deps:** exclude dev-dependency majors from Dependabot auto-merge ([#39](https://github.com/wyre-technology/timezest-mcp/issues/39)) ([a18e329](https://github.com/wyre-technology/timezest-mcp/commit/a18e32904d83bb19cfc442e69d8eeeb0596c3cbb))
+
 ## [1.2.1](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.0...v1.2.1) (2026-07-20)
 
 
