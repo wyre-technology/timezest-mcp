@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.0...v1.2.1) (2026-07-20)
+
+
+### Bug Fixes
+
+* **deps:** pin typescript back to ^6.0.3, unblock tsup DTS build ([#38](https://github.com/wyre-technology/timezest-mcp/issues/38)) ([8d3c863](https://github.com/wyre-technology/timezest-mcp/commit/8d3c86318f228b77ff40c4106f7d1e81221658e8)), closes [#35](https://github.com/wyre-technology/timezest-mcp/issues/35) [#37](https://github.com/wyre-technology/timezest-mcp/issues/37) [#35](https://github.com/wyre-technology/timezest-mcp/issues/35) [#35](https://github.com/wyre-technology/timezest-mcp/issues/35) [wyre-technology/blackpoint-mcp#39](https://github.com/wyre-technology/blackpoint-mcp/issues/39)
+
 # [1.2.0](https://github.com/wyre-technology/timezest-mcp/compare/v1.1.2...v1.2.0) (2026-07-17)
 
 
