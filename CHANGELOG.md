@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.2...v1.2.3) (2026-07-21)
+
+
+### Bug Fixes
+
+* **deps:** re-pin typescript to ^6.0.3 (regressed again, root cause corrected) ([#41](https://github.com/wyre-technology/timezest-mcp/issues/41)) ([51f3f54](https://github.com/wyre-technology/timezest-mcp/commit/51f3f54854c55a2fa24f5ac8fc24e0102a16ab2d)), closes [41/#39](https://github.com/wyre-technology/timezest-mcp/issues/39) [#42](https://github.com/wyre-technology/timezest-mcp/issues/42)
+
 ## [1.2.2](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.1...v1.2.2) (2026-07-20)
 
 
