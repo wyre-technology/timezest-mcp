@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.4...v1.2.5) (2026-07-21)
+
+
+### Bug Fixes
+
+* **http:** wire per-request gateway credentials via AsyncLocalStorage ([341fcf4](https://github.com/wyre-technology/timezest-mcp/commit/341fcf4721fcb0708f2d936f5fe6d0bebe2a5474)), closes [wyre-technology/conduit#1071](https://github.com/wyre-technology/conduit/issues/1071) [#1072](https://github.com/wyre-technology/timezest-mcp/issues/1072)
+
 ## [1.2.4](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.3...v1.2.4) (2026-07-21)
 
 
