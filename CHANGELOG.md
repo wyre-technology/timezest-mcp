@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.3...v1.2.4) (2026-07-21)
+
+
+### Bug Fixes
+
+* **http:** preserve baseUrl path prefix when building request URLs ([#42](https://github.com/wyre-technology/timezest-mcp/issues/42)) ([2714250](https://github.com/wyre-technology/timezest-mcp/commit/2714250e52ecedb1d145c7550a0f9c898fb41a8a))
+
 ## [1.2.3](https://github.com/wyre-technology/timezest-mcp/compare/v1.2.2...v1.2.3) (2026-07-21)
 
 
