@@ -70,11 +70,18 @@ export class HttpClient {
   }
 
   private buildUrl(path: string, params?: Record<string, unknown>): string {
-    // Ensure path starts with / and ends with / for consistent API behavior
-    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-    const fullPath = normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`;
+    // Join base and path explicitly. `new URL(relative, base)` performs RFC 3986
+    // relative resolution rather than concatenation: a reference starting with
+    // '/' is path-absolute and REPLACES the base's own path, so a baseUrl such
+    // as 'https://gateway.example.com/timezest/v1' would silently lose its
+    // '/timezest/v1' prefix.
+    const normalizedBase = this.baseUrl.replace(/\/+$/, '');
+    // Trim surrounding slashes; the API expects a trailing slash on the path.
+    const normalizedPath = path.replace(/^\/+/, '').replace(/\/+$/, '');
 
-    const url = new URL(fullPath, this.baseUrl);
+    const url = new URL(
+      normalizedPath ? `${normalizedBase}/${normalizedPath}/` : `${normalizedBase}/`
+    );
 
     if (params) {
       Object.entries(params).forEach(([key, value]) => {
